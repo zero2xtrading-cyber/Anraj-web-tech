@@ -1,0 +1,771 @@
+﻿/* ==========================================================================
+   Zenith University Admissions Bureau - Stylesheet
+   Color Scheme: Royal Crimson Rose (#e11d48) & Deep Navy (#0f172a)
+   ========================================================================== */
+
+:root {
+  --crimson: #e11d48;
+  --crimson-dark: #be123c;
+  --crimson-light: #fff1f2;
+  --crimson-border: #fecdd3;
+
+  --navy: #0f172a;
+  --navy-light: #1e293b;
+  --navy-soft: #334155;
+
+  --slate-subtle: #64748b;
+  --canvas: #f8fafc;
+  --border-line: #e2e8f0;
+
+  --success: #16a34a;
+  --success-bg: #f0fdf4;
+  --success-border: #bbf7d0;
+
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+
+  --font-heading: 'Lexend', sans-serif;
+  --font-text: 'Inter', -apple-system, sans-serif;
+
+  --radius-corner: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--canvas);
+  color: var(--navy);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.italic-note {
+  font-style: italic;
+}
+
+.highlight-crimson {
+  color: var(--crimson) !important;
+  font-weight: 700;
+}
+
+.highlight-navy {
+  color: var(--navy-light) !important;
+  font-weight: 700;
+}
+
+.content-frame {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+.masthead {
+  background: #ffffff;
+  border-bottom: 2px solid var(--crimson-border);
+  box-shadow: 0 2px 10px rgba(225, 29, 72, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.masthead-content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-unit {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-emblem {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--crimson), #fb7185);
+  color: #ffffff;
+  border-radius: var(--radius-corner);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.25);
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 0.78rem;
+  color: var(--slate-subtle);
+  font-weight: 500;
+}
+
+.live-tag {
+  background: var(--crimson-light);
+  color: var(--crimson);
+  border: 1px solid var(--crimson-border);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Main Body */
+.viewport-shell {
+  flex: 1;
+  padding: 2.5rem 0;
+}
+
+.portal-frame {
+  background: #ffffff;
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius-corner);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  padding: 2.5rem;
+}
+
+.frame-headline {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.kicker-badge {
+  display: inline-block;
+  background: var(--navy-light);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.headline-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+
+.headline-desc {
+  font-size: 0.92rem;
+  color: var(--slate-subtle);
+}
+
+.mark {
+  color: var(--crimson);
+}
+
+/* Feedback Strip */
+.feedback-strip {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-corner);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.feedback-strip.is-error {
+  background: var(--danger-bg);
+  color: #991b1b;
+  border: 1px solid var(--danger-border);
+}
+
+.feedback-strip.is-ok {
+  background: var(--success-bg);
+  color: #166534;
+  border: 1px solid var(--success-border);
+}
+
+/* Partitions */
+.form-partition {
+  margin-bottom: 2.25rem;
+}
+
+.partition-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--crimson-light);
+}
+
+.legend-index {
+  background: var(--crimson);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partition-legend h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Grid */
+.form-row-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+}
+
+.cell-wide {
+  grid-column: span 2;
+}
+
+.input-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.input-cell label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--navy-soft);
+}
+
+.textbox-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.glyph-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--slate-subtle);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.textbox-wrap input,
+.textbox-wrap select,
+.input-cell textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--navy);
+  background: #ffffff;
+  border: 1.5px solid var(--border-line);
+  border-radius: var(--radius-corner);
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-cell textarea {
+  padding: 0.75rem 1rem;
+  resize: vertical;
+}
+
+.textbox-wrap input:focus,
+.textbox-wrap select:focus,
+.input-cell textarea:focus {
+  border-color: var(--crimson);
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.textbox-wrap input.input-invalid,
+.textbox-wrap select.input-invalid,
+.input-cell textarea.input-invalid {
+  border-color: var(--danger);
+  background-color: #fffafa;
+}
+
+.field-feedback {
+  font-size: 0.78rem;
+  color: var(--danger);
+  font-weight: 500;
+  min-height: 1rem;
+}
+
+/* Gender Radio Pill Set */
+.pill-radio-set {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.pill-unit {
+  flex: 1;
+  cursor: pointer;
+}
+
+.pill-unit input[type="radio"] {
+  display: none;
+}
+
+.pill-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-line);
+  border-radius: var(--radius-corner);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy-soft);
+  transition: all 0.2s ease;
+}
+
+.pill-unit input[type="radio"]:checked + .pill-label {
+  background: var(--crimson-light);
+  border-color: var(--crimson);
+  color: var(--crimson);
+  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.15);
+}
+
+/* Attestation */
+.attest-panel {
+  background: var(--canvas);
+  border: 1.5px dashed var(--border-line);
+  padding: 1.25rem;
+  border-radius: var(--radius-corner);
+  margin-bottom: 2rem;
+}
+
+.tick-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.tick-wrap input[type="checkbox"] {
+  display: none;
+}
+
+.tick-box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-line);
+  border-radius: 4px;
+  background: #ffffff;
+  margin-top: 2px;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tick-wrap input[type="checkbox"]:checked + .tick-box {
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.tick-wrap input[type="checkbox"]:checked + .tick-box::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 0.7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tick-text {
+  font-size: 0.85rem;
+  color: var(--navy-soft);
+  line-height: 1.45;
+}
+
+/* Controls */
+.panel-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-line);
+}
+
+.btn-ctrl {
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-corner);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--crimson);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+}
+
+.primary-btn:hover {
+  background: var(--crimson-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.4);
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  color: var(--navy);
+  border: 1px solid var(--border-line);
+}
+
+.secondary-btn:hover {
+  background: #e2e8f0;
+}
+
+.btn-ctrl:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   OFFICIAL PROVISIONAL PASS / DOSSIER STYLES
+   ========================================================================== */
+.confirmation-banner {
+  background: var(--success-bg);
+  border: 1.5px solid var(--success-border);
+  border-radius: var(--radius-corner);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.banner-badge {
+  font-size: 2.2rem;
+  color: var(--success);
+}
+
+.confirmation-banner h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: #14532d;
+  font-weight: 700;
+}
+
+.confirmation-banner p {
+  font-size: 0.88rem;
+  color: #15803d;
+}
+
+.dossier-paper {
+  background: #ffffff;
+  border: 2px solid var(--navy);
+  border-radius: var(--radius-corner);
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.dossier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.dossier-crest {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crest-frame {
+  width: 58px;
+  height: 58px;
+  background: var(--crimson-light);
+  border: 2px solid var(--crimson);
+  color: var(--crimson);
+  font-size: 1.8rem;
+  border-radius: var(--radius-corner);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dossier-titles h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.dossier-titles p {
+  font-size: 0.78rem;
+  color: var(--slate-subtle);
+}
+
+.dossier-badge {
+  display: inline-block;
+  background: var(--crimson-light);
+  color: var(--crimson);
+  border: 1px solid var(--crimson-border);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.dossier-meta {
+  text-align: right;
+}
+
+.ref-container {
+  background: var(--crimson-light);
+  border: 1px dashed var(--crimson);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.ref-title {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--crimson);
+  letter-spacing: 1px;
+}
+
+.ref-number {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--crimson);
+}
+
+.meta-date {
+  font-size: 0.75rem;
+  color: var(--slate-subtle);
+}
+
+.dossier-divider {
+  border-top: 1.5px dashed var(--border-line);
+  margin: 1.75rem 0;
+}
+
+/* Grid */
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.wide-field {
+  grid-column: span 2;
+}
+
+.dossier-field {
+  background: #ffffff;
+  border: 1px solid var(--border-line);
+  border-radius: 6px;
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-subtle);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.field-data {
+  font-size: 0.94rem;
+  color: var(--navy);
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.dossier-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.security-stamp {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--crimson);
+}
+
+.security-stamp i {
+  font-size: 2rem;
+}
+
+.security-stamp strong {
+  display: block;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.security-stamp p {
+  font-size: 0.74rem;
+  color: var(--slate-subtle);
+}
+
+.officer-signature {
+  text-align: center;
+  width: 220px;
+}
+
+.line-holder {
+  border-top: 1.5px solid var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.officer-signature span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--slate-subtle);
+}
+
+.dossier-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Footer */
+.mastfoot {
+  margin-top: auto;
+  background: #ffffff;
+  border-top: 1px solid var(--border-line);
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+.foot-inner p {
+  font-size: 0.82rem;
+  color: var(--slate-subtle);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portal-frame {
+    padding: 1.5rem;
+  }
+  .form-row-grid, .dossier-grid {
+    grid-template-columns: 1fr;
+  }
+  .cell-wide, .wide-field {
+    grid-column: span 1;
+  }
+  .pill-radio-set {
+    flex-direction: column;
+  }
+  .dossier-header, .dossier-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .dossier-meta {
+    text-align: left;
+  }
+  .officer-signature {
+    width: 100%;
+  }
+  .panel-buttons, .dossier-actions {
+    flex-direction: column;
+  }
+  .btn-ctrl {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Print */
+@media print {
+  .no-print, .masthead, .mastfoot, #entrySection, .confirmation-banner, .dossier-actions {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .viewport-shell, .content-frame {
+    padding: 0;
+    max-width: 100%;
+  }
+  .portal-frame {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+  .dossier-paper {
+    border: 2px solid #000000 !important;
+    padding: 1.5rem !important;
+  }
+  .crest-frame, .ref-container, .dossier-field {
+    border-color: #000000 !important;
+    background: transparent !important;
+  }
+  .field-data.highlight-crimson, .field-data.highlight-navy {
+    color: #000000 !important;
+  }
+}

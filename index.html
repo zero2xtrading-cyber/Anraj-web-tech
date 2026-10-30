@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenith University - Online Admissions & Registration Bureau</title>
+  <!-- Google Fonts: Lexend & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Banner Header -->
+  <header class="masthead no-print">
+    <div class="masthead-content">
+      <div class="brand-unit">
+        <div class="brand-emblem">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div class="brand-text-block">
+          <h1 class="brand-name">ZENITH UNIVERSITY</h1>
+          <span class="brand-sub">Institute of Advanced Technology & Engineering</span>
+        </div>
+      </div>
+      <div class="session-tag">
+        <span class="live-tag"><i class="fa-solid fa-shield-halved"></i> Academic Portal 2026-27</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="viewport-shell">
+    <div class="content-frame">
+
+      <!-- ============================================== -->
+      <!-- SECTION 1: CANDIDATE ENROLLMENT FORM           -->
+      <!-- ============================================== -->
+      <section id="entrySection" class="portal-frame no-print">
+        
+        <div class="frame-headline">
+          <span class="kicker-badge"><i class="fa-solid fa-graduation-cap"></i> CANDIDATE ADMISSIONS</span>
+          <h2 class="headline-title">Student Enrollment Application</h2>
+          <p class="headline-desc">Please complete all required fields below. Your information will be validated and submitted directly to the University Registrar server.</p>
+        </div>
+
+        <!-- Alert Banner -->
+        <div id="noticeBanner" class="feedback-strip d-none">
+          <i class="feedback-icon fa-solid fa-circle-exclamation"></i>
+          <span class="feedback-text"></span>
+        </div>
+
+        <form id="admissionForm" action="process.php" method="POST" novalidate>
+          
+          <!-- Section 1: Candidate Identity -->
+          <div class="form-partition">
+            <div class="partition-legend">
+              <span class="legend-index">I</span>
+              <h3>Applicant Identity & Personal Profile</h3>
+            </div>
+            
+            <div class="form-row-grid">
+              
+              <div class="input-cell">
+                <label for="candidateName">Student Full Name <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-regular fa-user glyph-icon"></i>
+                  <input type="text" id="candidateName" name="candidateName" placeholder="e.g. Anraj Singh" required>
+                </div>
+                <span class="field-feedback" id="candidateNameErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="candidateEmail">Official Email ID <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-regular fa-envelope glyph-icon"></i>
+                  <input type="email" id="candidateEmail" name="candidateEmail" placeholder="e.g. anraj.singh@gmail.com" required>
+                </div>
+                <span class="field-feedback" id="candidateEmailErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="candidatePhone">Primary Mobile No <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-phone-volume glyph-icon"></i>
+                  <input type="tel" id="candidatePhone" name="candidatePhone" placeholder="10-digit mobile" maxlength="10" required>
+                </div>
+                <span class="field-feedback" id="candidatePhoneErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="candidateDob">Date of Birth <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-regular fa-calendar-check glyph-icon"></i>
+                  <input type="date" id="candidateDob" name="candidateDob" required>
+                </div>
+                <span class="field-feedback" id="candidateDobErr"></span>
+              </div>
+
+              <div class="input-cell cell-wide">
+                <label>Gender Category <span class="mark">*</span></label>
+                <div class="pill-radio-set">
+                  <label class="pill-unit">
+                    <input type="radio" name="candidateGender" value="Male" required>
+                    <span class="pill-label"><i class="fa-solid fa-person"></i> Male</span>
+                  </label>
+                  <label class="pill-unit">
+                    <input type="radio" name="candidateGender" value="Female">
+                    <span class="pill-label"><i class="fa-solid fa-person-dress"></i> Female</span>
+                  </label>
+                  <label class="pill-unit">
+                    <input type="radio" name="candidateGender" value="Other">
+                    <span class="pill-label"><i class="fa-solid fa-users"></i> Other</span>
+                  </label>
+                </div>
+                <span class="field-feedback" id="candidateGenderErr"></span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Section 2: Academic Program Selection -->
+          <div class="form-partition">
+            <div class="partition-legend">
+              <span class="legend-index">II</span>
+              <h3>Academic Program & Enrollment Preferences</h3>
+            </div>
+
+            <div class="form-row-grid">
+
+              <div class="input-cell">
+                <label for="targetCourse">Target Engineering Program <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-laptop-code glyph-icon"></i>
+                  <select id="targetCourse" name="targetCourse" required>
+                    <option value="" disabled selected>-- Choose Academic Major --</option>
+                    <option value="B.Tech in Cyber Security & Digital Forensics">B.Tech - Cyber Security & Forensics</option>
+                    <option value="B.Tech in Cloud Computing & DevOps">B.Tech - Cloud Computing & DevOps</option>
+                    <option value="B.Tech in Artificial Intelligence & Robotics">B.Tech - AI & Robotics Engineering</option>
+                    <option value="B.Tech in Full Stack Software Systems">B.Tech - Full Stack Software Systems</option>
+                    <option value="M.Tech in Advanced Computer Science">M.Tech - Advanced Computer Science</option>
+                  </select>
+                </div>
+                <span class="field-feedback" id="targetCourseErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="studyMode">Study Mode Preference <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-chalkboard-user glyph-icon"></i>
+                  <select id="studyMode" name="studyMode" required>
+                    <option value="" disabled selected>-- Select Study Mode --</option>
+                    <option value="Full-Time On Campus">Full-Time (On Campus & Labs)</option>
+                    <option value="Hybrid / Blended Learning">Hybrid (Lectures + Online Labs)</option>
+                    <option value="Executive Weekend Immersion">Executive Weekend Immersion</option>
+                  </select>
+                </div>
+                <span class="field-feedback" id="studyModeErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="qualExam">Prior Qualifying Education <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-award glyph-icon"></i>
+                  <select id="qualExam" name="qualExam" required>
+                    <option value="" disabled selected>-- Select Qualification --</option>
+                    <option value="12th Standard / Pre-University (PCM)">12th Standard / Pre-University (PCM)</option>
+                    <option value="State Board Technical Diploma">State Board Technical Diploma</option>
+                    <option value="Bachelor of Science (B.Sc / BCA)">Bachelor of Science (B.Sc / BCA)</option>
+                    <option value="Bachelor of Engineering (B.E. / B.Tech)">Bachelor of Engineering (B.E. / B.Tech)</option>
+                  </select>
+                </div>
+                <span class="field-feedback" id="qualExamErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="qualScore">Aggregate Score / Percentage (%) <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-chart-simple glyph-icon"></i>
+                  <input type="text" id="qualScore" name="qualScore" placeholder="e.g. 89.2%" required>
+                </div>
+                <span class="field-feedback" id="qualScoreErr"></span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Section 3: Contact & Domicile Details -->
+          <div class="form-partition">
+            <div class="partition-legend">
+              <span class="legend-index">III</span>
+              <h3>Residential Address & Applicant Statement</h3>
+            </div>
+
+            <div class="form-row-grid">
+
+              <div class="input-cell cell-wide">
+                <label for="homeAddress">Permanent Residential Address <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-house-chimney glyph-icon"></i>
+                  <input type="text" id="homeAddress" name="homeAddress" placeholder="House/Flat No, Apartment, Street name" required>
+                </div>
+                <span class="field-feedback" id="homeAddressErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="homeCity">City / District <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-map-location-dot glyph-icon"></i>
+                  <input type="text" id="homeCity" name="homeCity" placeholder="e.g. Hyderabad" required>
+                </div>
+                <span class="field-feedback" id="homeCityErr"></span>
+              </div>
+
+              <div class="input-cell">
+                <label for="postalZip">Postal PIN / ZIP Code <span class="mark">*</span></label>
+                <div class="textbox-wrap">
+                  <i class="fa-solid fa-barcode glyph-icon"></i>
+                  <input type="text" id="postalZip" name="postalZip" placeholder="6-digit PIN" maxlength="6" required>
+                </div>
+                <span class="field-feedback" id="postalZipErr"></span>
+              </div>
+
+              <div class="input-cell cell-wide">
+                <label for="aspirations">Career Aspirations / Projects Overview (Optional)</label>
+                <textarea id="aspirations" name="aspirations" rows="3" placeholder="Briefly describe your programming experience or career goals in this engineering discipline..."></textarea>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Legal Attestation -->
+          <div class="attest-panel">
+            <label class="tick-wrap">
+              <input type="checkbox" id="attestBox" name="attestBox" required>
+              <span class="tick-box"></span>
+              <span class="tick-text">
+                I solemnly affirm that the information furnished herein is complete and true. I understand that any false statement will result in forfeiture of admission.
+              </span>
+            </label>
+            <span class="field-feedback" id="attestBoxErr"></span>
+          </div>
+
+          <!-- Controls -->
+          <div class="panel-buttons">
+            <button type="reset" id="resetEntryBtn" class="btn-ctrl secondary-btn">
+              <i class="fa-solid fa-rotate-left"></i> Reset Fields
+            </button>
+            <button type="submit" id="submitEntryBtn" class="btn-ctrl primary-btn">
+              <span class="btn-idle"><i class="fa-solid fa-paper-plane"></i> Submit Application</span>
+              <span class="btn-busy d-none"><i class="fa-solid fa-circle-notch fa-spin"></i> Processing Server Request...</span>
+            </button>
+          </div>
+
+        </form>
+      </section>
+
+
+      <!-- ============================================== -->
+      <!-- SECTION 2: OFFICIAL PROVISIONAL ENROLMENT SLIP -->
+      <!-- Rendered dynamically after backend submission  -->
+      <!-- ============================================== -->
+      <section id="dossierSection" class="portal-frame d-none">
+        
+        <div class="confirmation-banner no-print">
+          <div class="banner-badge"><i class="fa-solid fa-circle-check"></i></div>
+          <div>
+            <h3>Application Accepted & Registered!</h3>
+            <p>Your enrollment credentials have been recorded by the server. Below is your official Provisional Admission Slip.</p>
+          </div>
+        </div>
+
+        <!-- Official Slip Document -->
+        <div id="enrolmentSlip" class="dossier-paper">
+          
+          <div class="dossier-header">
+            <div class="dossier-crest">
+              <div class="crest-frame">
+                <i class="fa-solid fa-atom"></i>
+              </div>
+              <div class="dossier-titles">
+                <h2>ZENITH UNIVERSITY OF ADVANCED TECHNOLOGY</h2>
+                <p>Office of the Board of Admissions & Directorate of Academic Affairs</p>
+                <span class="dossier-badge">OFFICIAL CANDIDATE PROVISIONAL PASS</span>
+              </div>
+            </div>
+            
+            <div class="dossier-meta">
+              <div class="ref-container">
+                <span class="ref-title">REGISTRATION ID</span>
+                <span class="ref-number" id="slipRegId">ZIAT-XXXXXX</span>
+              </div>
+              <div class="meta-date">Date Issued: <strong id="slipDate">--/--/----</strong></div>
+            </div>
+          </div>
+
+          <div class="dossier-divider"></div>
+
+          <!-- Student Profile Grid -->
+          <div class="dossier-grid">
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-regular fa-user"></i> Applicant Name</span>
+              <span class="field-data highlight-crimson" id="slipName">--</span>
+            </div>
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-regular fa-envelope"></i> Email Identifier</span>
+              <span class="field-data" id="slipEmail">--</span>
+            </div>
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-solid fa-phone"></i> Mobile Contact</span>
+              <span class="field-data" id="slipPhone">--</span>
+            </div>
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-regular fa-calendar"></i> Date of Birth & Gender</span>
+              <span class="field-data" id="slipDobGender">--</span>
+            </div>
+            <div class="dossier-field wide-field">
+              <span class="field-label"><i class="fa-solid fa-laptop-code"></i> Admitted Academic Stream</span>
+              <span class="field-data highlight-navy" id="slipCourse">--</span>
+            </div>
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-solid fa-chalkboard-user"></i> Study Mode</span>
+              <span class="field-data" id="slipMode">--</span>
+            </div>
+            <div class="dossier-field">
+              <span class="field-label"><i class="fa-solid fa-chart-simple"></i> Prior Qualification & Score</span>
+              <span class="field-data" id="slipQualification">--</span>
+            </div>
+            <div class="dossier-field wide-field">
+              <span class="field-label"><i class="fa-solid fa-house-chimney"></i> Residential Address</span>
+              <span class="field-data" id="slipAddress">--</span>
+            </div>
+            <div class="dossier-field wide-field" id="slipAspirationWrapper">
+              <span class="field-label"><i class="fa-regular fa-comment-dots"></i> Statement of Purpose</span>
+              <span class="field-data italic-note" id="slipAspirations">--</span>
+            </div>
+          </div>
+
+          <!-- Slip Footer & Official Stamp -->
+          <div class="dossier-footer">
+            <div class="security-stamp">
+              <i class="fa-solid fa-certificate"></i>
+              <div>
+                <strong>UNIVERSITY VALIDATED</strong>
+                <p>System Timestamp: <span id="slipTimestamp">--</span></p>
+              </div>
+            </div>
+            <div class="officer-signature">
+              <div class="line-holder"></div>
+              <span>Controller of Admissions & Registrar</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Print & Next Actions -->
+        <div class="dossier-actions no-print">
+          <button type="button" id="printSlipBtn" class="btn-ctrl primary-btn">
+            <i class="fa-solid fa-print"></i> Print Slip / Save PDF
+          </button>
+          <button type="button" id="newAdmissionBtn" class="btn-ctrl secondary-btn">
+            <i class="fa-solid fa-plus"></i> Submit Another Application
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mastfoot no-print">
+    <div class="foot-inner">
+      <p>&copy; 2026 Zenith University. Online Admissions Bureau. Built with HTML, CSS, JavaScript, jQuery & PHP.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
